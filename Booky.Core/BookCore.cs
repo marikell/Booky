@@ -1,5 +1,7 @@
 ﻿using Booky.Data;
 using Booky.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Booky.Core
 {
@@ -19,5 +21,9 @@ namespace Booky.Core
             Repository.Delete(o=> o.IdBook == id);
         }
 
+        public Book Get(int id)
+        {
+           return Repository.Get(o => o.IdBook == id).FirstOrDefault();
+        }
     }
 }

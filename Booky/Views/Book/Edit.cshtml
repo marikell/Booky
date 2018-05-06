@@ -1,11 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿@{
+    ViewBag.Title = "Edição de Um Livro";
+    ViewBag.Type = "Edit";
 
-namespace Booky.Views.Book
-{
-	public class Edit
-	{
-	}
 }
+@model Booky.Models.Book
+
+@Scripts.Render("~/js/book")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Html.Partial("_Book")
+@Html.Hidden("IdBook")
+<script>
+
+    $(document).ready(function () {
+
+       $("#Title").val('@Model.Title');
+       $("#Author").val('@Model.Author');
+        $("#BookPublisher").val('@Model.BookPublisher');
+        $("#Description").val('@Model.Description');
+        $("#StockQty").val(parseInt(@Model.StockQty));
+        $("#Price").val(parseFloat(@Model.Price));
+        $("#IdBook").val(parseInt(@Model.IdBook));
+
+    });
+
+
+</script>
+
+
+

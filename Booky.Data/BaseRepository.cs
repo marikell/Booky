@@ -32,11 +32,12 @@ namespace Booky.Data
         public void Edit(T entity)
         {
             context.Entry(entity).State = EntityState.Modified;
+            Save();
         }
 
-        public IQueryable<T> Get(Func<T,bool> predicate)
+        public ICollection<T> Get(Func<T,bool> predicate)
         {
-            return context.Set<T>().Where(predicate).AsQueryable();
+            return context.Set<T>().Where(predicate).ToList();
         }
 
         public void Save()

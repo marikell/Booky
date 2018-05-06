@@ -21,11 +21,18 @@ namespace Booky
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js","~/Scripts/home.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/images"));
+
+            bundles.Add(new ScriptBundle("~/js/home").Include("~/Scripts/home.js"));
+            bundles.Add(new ScriptBundle("~/js/book").Include("~/Scripts/book.js"));
+
+
         }
     }
 }

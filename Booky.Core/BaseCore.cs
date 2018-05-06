@@ -33,5 +33,10 @@ namespace Booky.Core
         {
             Repository.Dispose();
         }
+
+        public void Edit(T entity)
+        {
+            Repository.Edit(entity);
+        }
     }
 }

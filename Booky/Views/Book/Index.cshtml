@@ -1,0 +1,88 @@
+﻿@Scripts.Render("~/js/book")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<br />
+<br />
+
+<fieldset>
+    <legend>Livros Listados</legend>
+</fieldset>
+
+<br />
+
+<div style="display: inline-block; width:100%; white-space: nowrap;">
+    <label for="txtSearch">Pesquisa:</label>
+    @Html.DropDownList("dplSearch", (IEnumerable<SelectListItem>)ViewBag.Filters, "Selecione um Filtro.")
+    <input class="form-control" type="text" id="txtSearch" style="display: inline-block;">
+    <button onclick="search()" class="btn btn-default">
+        <span style="color:white; font-size:3em;" class="glyphicon glyphicon-search"></span>
+    </button>
+</div>
+
+<br />
+<table id="tblLivros" class="table table-hover table-striped" cellspacing="0" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Autor</th>
+            <th>Editora</th>
+            <th>Preço</th>
+            <th>Qtd. Estoque</th>
+            <th></th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Books)
+    {
+        <tr id="@item.IdBook">
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.Author
+            </td>
+            <td>
+                @item.BookPublisher
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                @item.StockQty
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                <button id="btnEdit @item.IdBook" type="button" class="btn btn-dark" onclick="editBook(this)">Editar</button>
+
+            </td>
+
+            <td>
+                <button id="btnRemove @item.IdBook" type="button" class="btn btn-danger" onclick="deleteBook(this)">Excluir</button>
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
+
+<script>
+
+    $(document).ready(function () {
+
+        $.ajax({
+            type: "post",
+            url: '/Book/Index',
+            data: {},
+            success: function () {
+
+            }
+        });
+
+    });
+
+</script>

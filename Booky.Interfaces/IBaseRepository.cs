@@ -9,7 +9,7 @@ namespace Booky.Interfaces
         void Add(T entity);
         void Delete(Func<T, bool> predicate);
         void Edit(T entity);
-        IQueryable<T> Get(Func<T, bool> predicate);
+        ICollection<T> Get(Func<T, bool> predicate);
         void Save();
         List<T> GetAll();
         
