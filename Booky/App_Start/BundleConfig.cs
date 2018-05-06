@@ -25,7 +25,7 @@ namespace Booky
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css", "~/Content/home.css"));
 
             bundles.Add(new StyleBundle("~/Content/images"));
 

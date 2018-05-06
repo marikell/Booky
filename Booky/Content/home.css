@@ -1,0 +1,107 @@
+﻿.header {
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.div-h10{
+    height:10%;
+}
+.header h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 80px;
+    font-family: Calibri;
+}
+.header h2 {
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header button {
+    background-color: #F1F1F1;
+    color: black;
+    text-align: left;
+    display: inline-block;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    height: 160px;
+    width: 160px;
+    border-radius: 1000px;
+    font-size: 25px;
+}
+
+    .header button:hover {
+        background-color: white;
+        transition: 0.5s;
+
+    }
+
+    .header button:after {
+        transition: 0.5s;
+        background-color: #F1F1F1;
+    }
+
+    .header button img {
+        margin-left: 2%;
+        height: 130px;
+        width: 130px;
+    }
+
+    
+
+.footer-header {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.div-btn {
+    height: 300px;
+    text-align: center;
+}
+    .div-btn a:hover {
+        transition: 0.35s;
+        height:180px;
+        width:180px;
+    }
+
+    .div-btn a:after {
+        transition: 0.35s;
+        height: 150px;
+        width: 150px;
+    }
+
+
+    .div-btn h3 {
+        font-weight: bold;
+    }
+
+    .div-btn a {
+        height: 150px;
+        width: 150px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 1000px;
+    }
+
+        .div-btn a span {
+            font-size: 100px;
+        }
+
+#btnCreateBook {
+    background-color: #AC3E31;
+    border-color: #AC3E31;
+}
+
+
+#btnListBook {
+    background-color: #DBAE58;
+    border-color: #DBAE58;
+}
+
+#btnSearchBook {
+    background-color: #0091D5;
+    border-color: #0091D5;
+}
