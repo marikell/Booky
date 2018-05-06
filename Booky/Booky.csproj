@@ -160,6 +160,7 @@
     <Content Include="App_Data\BookyDb_log.ldf">
       <DependentUpon>BookyDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\book.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\home.css" />
@@ -173,6 +174,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\images\library.jpeg" />
+    <Content Include="Content\layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -211,7 +213,6 @@
     <Content Include="Views\Book\Edit.cshtml" />
     <Content Include="Views\Book\_Book.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
-    <Content Include="Views\Book\_BookTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Booky.Core\Booky.Core.csproj">

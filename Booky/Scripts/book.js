@@ -4,7 +4,7 @@
     var bookPublisher = $("#BookPublisher").val()
     var description = $("#Description").val()
     var qtyStock = $("#StockQty").val()
-    var price = $("#Price").val()
+    var price = parseFloat($("#Price").val());
 
     var obj = {
         Title: title,
@@ -43,16 +43,29 @@ function editBook(button) {
    
 }
 
-function deleteBook(button) {
-    var id = $(button).attr("id");
-    id = id.slice(10);
+function closeModal() {
+    $('#removeModal').modal('toggle');
 
+}
+
+function showModal(button) {
+     var id = $(button).attr("id");
+    id = id.slice(10);
+    $("#IdBook").val(id);
+
+    $("#removeModal").modal().show();   
+}
+
+function deleteBook() {
+   
+    var id = $("#IdBook").val()
     $.ajax({
         type: "post",
         url: "/Book/Delete?id=" +id,
         data: { id: id },
         success: function () {
             $('#' + id).remove();
+            closeModal();
         }
     });
 

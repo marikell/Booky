@@ -3,25 +3,17 @@
 @Scripts.Render("~/bundles/bootstrap")
 <br />
 <br />
+@{ 
+    ViewBag.Title = "Lista";
+}
 
 <fieldset>
-    <legend>Livros Listados</legend>
+    <legend>Livros no Estoque</legend>
 </fieldset>
 
 <br />
-
-<div style="display: inline-block; width:100%; white-space: nowrap;">
-    <label for="txtSearch">Pesquisa:</label>
-    @Html.DropDownList("dplSearch", (IEnumerable<SelectListItem>)ViewBag.Filters, "Selecione um Filtro.")
-    <input class="form-control" type="text" id="txtSearch" style="display: inline-block;">
-    <button onclick="search()" class="btn btn-default">
-        <span style="color:white; font-size:3em;" class="glyphicon glyphicon-search"></span>
-    </button>
-</div>
-
-<br />
-<table id="tblLivros" class="table table-hover table-striped" cellspacing="0" style="width: 100%;">
-    <thead>
+<table id="tblLivros" class="table table-responsive table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>Título</th>
             <th>Descrição</th>
@@ -42,33 +34,54 @@
                 @item.Title
             </td>
             <td>
+                @item.Description
+            </td>
+            <td>
                 @item.Author
             </td>
             <td>
                 @item.BookPublisher
             </td>
-            <td>
-                @item.Description
-            </td>
-            <td>
-                @item.StockQty
-            </td>
-            <td>
+            <td style="width:50px;">
                 @item.Price
             </td>
-            <td>
-                <button id="btnEdit @item.IdBook" type="button" class="btn btn-dark" onclick="editBook(this)">Editar</button>
+            <td style="width:50px;">
+                @item.StockQty
+            </td>
+            <td style="width:50px;">
+                <button id="btnEdit @item.IdBook" type="button" class="btn btn-dark edit" onclick="editBook(this)"><span class="glyphicon glyphicon-pencil"></span></button>
 
             </td>
 
-            <td>
-                <button id="btnRemove @item.IdBook" type="button" class="btn btn-danger" onclick="deleteBook(this)">Excluir</button>
+            <td style="width:50px;">
+                <button id="btnRemove @item.IdBook" type="button" class="btn btn-danger remove" onclick="showModal(this)"><span class="glyphicon glyphicon-remove"></span></button>
             </td>
 
         </tr>
 }
     </tbody>
 </table>
+
+<div class="modal" tabindex="-1" role="dialog" id="removeModal">
+    @Html.Hidden("IdBook")
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente excluir esse livro?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="deleteBook()">Confirmar</button>
+                <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
 

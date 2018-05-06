@@ -1,0 +1,74 @@
+﻿table thead{
+    color:white;
+    background-color:black;
+}
+table{
+    border:1px solid lightgray;
+    border-radius:100px;
+}
+.edit {
+    background-color: #DBAE58;
+    color: white;
+}
+
+#btnSave {
+    width: 100%;
+    background-color: #AC3E31;
+    border-color: #AC3E31;
+    color:white;
+    font-weight:bold;
+}
+
+    #btnSave:hover {
+        background-color: #F1F1F1;
+        color: black;
+        transition:0.25s;
+        border-color:#F1F1F1;
+    }
+
+#btnList {
+    width: 100%;
+    background-color: #DBAE58;
+    border-color: #DBAE58;
+    color: white;
+    font-weight: bold;
+}
+
+    #btnList:hover {
+        background-color: #F1F1F1;
+        color: black;
+        transition: 0.25s;
+        border-color: #F1F1F1;
+    }
+
+#btnLeave {
+    width: 100%;
+    background-color: #0091D5;
+    border-color: #0091D5;
+    color: white;
+    font-weight: bold;
+}
+
+    #btnLeave:hover {
+        background-color: #F1F1F1;
+        color: black;
+        transition: 0.25s;
+        border-color: #F1F1F1;
+    }
+
+
+    .edit:hover {
+        background-color: #F1F1F1;
+        color: black;
+    }
+.remove {
+    background-color: #AC3E31;
+    color: white;
+    border-color: #AC3E31;
+}
+
+    .remove:hover {
+        background-color: #F1F1F1;
+        color: black;
+        border-color: #F1F1F1;
+    }
